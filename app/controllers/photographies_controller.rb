@@ -1,4 +1,5 @@
 class PhotographiesController < ApplicationController
+  before_action :authenticate_user! # , except: %i[index show]
   before_action :set_photography, only: %i[ show edit update destroy ]
 
   # GET /photographies or /photographies.json
@@ -12,7 +13,9 @@ class PhotographiesController < ApplicationController
 
   # GET /photographies/new
   def new
-    @photography = Photography.new
+  
+  @photography = current_user.photographies.build
+  
   end
 
   # GET /photographies/1/edit
@@ -21,8 +24,9 @@ class PhotographiesController < ApplicationController
 
   # POST /photographies or /photographies.json
   def create
-    @photography = Photography.new(photography_params)
 
+  @photography = current_user.photographies.build(photography_params)
+  
     respond_to do |format|
       if @photography.save
         format.html { redirect_to photography_url(@photography), notice: "Photography was successfully created." }
