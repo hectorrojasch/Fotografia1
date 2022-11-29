@@ -1,5 +1,5 @@
 class Tag < ApplicationRecord
 
-	has_many :articles, dependent: :destroy
+	has_many :photographies, dependent: :destroy
 
 end

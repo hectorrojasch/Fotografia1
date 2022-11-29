@@ -1,5 +1,5 @@
 class PhotographiesController < ApplicationController
-  before_action :authenticate_user! # , except: %i[index show]
+  before_action :authenticate_user!  , except: %i[index show]
   before_action :set_photography, only: %i[ show edit update destroy ]
 
   # GET /photographies or /photographies.json
@@ -69,6 +69,6 @@ class PhotographiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def photography_params
-      params.require(:photography).permit(:name, :description, :user_id, :tag_id)
+      params.require(:photography).permit(:name, :description, :tag_id)
     end
 end
