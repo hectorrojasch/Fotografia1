@@ -3,8 +3,18 @@
 <%= render @photography %>
 
 <div>
-  <%= link_to "Edit this photography", edit_photography_path(@photography) %> |
-  <%= link_to "Back to photographies", photographies_path %>
+  <% if user_signed_in? && (current_user.id == @photography.user_id)%>
 
-  <%= button_to "Destroy this photography", @photography, method: :delete %>
+  <%= link_to "Edit this article", edit_photography_path(@photography) %>
+  
+  <%= button_to "Destroy this article", @photography, method: :delete %>
+
+  <% else %>
+
+  <% end %>
+
+
+
+  <%= link_to "Back to articles", photographies_path %>
+
 </div>
