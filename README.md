@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Este proyecto parece maldito, no funciona la relación de muchos a muchos entre las tablas tag y photography, lo cual no lo puedo constatar
+porque, además se armó un tremendo enredo con git. Además en tablero, tabla relacionadora entre user y photography, para hacer funcionar las
+vistas, se debe agregar el usuario, alguno de los existente.
