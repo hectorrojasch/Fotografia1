@@ -1,11 +1,11 @@
 <div id="<%= dom_id photography %>">
   
   <p>
-      <% if photography.foto.attached? %>
-        <%= image_tag photography.foto %> 
-      <% else %>  
-        <%= image_tag 'foto.png' %>
-      <% end %>   
+    <% if photography.foto.attached? %>
+      <%= image_tag photography.foto %> 
+    <% else %>  
+      <%= image_tag 'foto.png' %>
+    <% end %>   
 
   </p>
 
